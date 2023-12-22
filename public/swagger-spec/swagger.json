@@ -1,0 +1,173 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"FileUploadSuccessResponse": {
+				"properties": {
+					"message": {
+						"type": "string",
+						"example": "Upload was successful"
+					}
+				},
+				"required": [
+					"message"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"FileUploadFailureResponseReasonEnum": {
+				"enum": [
+					"Could not upload file(s)",
+					"Exceeded the allowed number of file(s) that can be uploaded in a single request",
+					"Exceeded the allowed number of requests. Try again in a few minutes.",
+					"No file(s) to upload",
+					"Unauthorized"
+				],
+				"type": "string"
+			},
+			"FileUploadFailureResponse": {
+				"properties": {
+					"reason": {
+						"$ref": "#/components/schemas/FileUploadFailureResponseReasonEnum"
+					}
+				},
+				"required": [
+					"reason"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {
+			"basic_auth": {
+				"in": "headers",
+				"scheme": "basic",
+				"type": "http"
+			}
+		}
+	},
+	"info": {
+		"title": "file-upload-rest-service",
+		"version": "1.0.0",
+		"description": "The backend REST service that handles requests to upload files to filesystem",
+		"contact": {}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/file-upload": {
+			"post": {
+				"operationId": "file-upload",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"anyOf": [
+										{
+											"$ref": "#/components/schemas/FileUploadSuccessResponse"
+										},
+										{
+											"$ref": "#/components/schemas/FileUploadFailureResponse"
+										}
+									]
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "No file(s) to upload",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/FileUploadFailureResponse"
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "Unauthorized",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/FileUploadFailureResponse"
+								}
+							}
+						}
+					},
+					"413": {
+						"description": "Exceeded the allowed number of file(s) that can be uploaded in a single request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/FileUploadFailureResponse"
+								}
+							}
+						}
+					},
+					"429": {
+						"description": "Exceeded the allowed number of requests. Try again in a few minutes.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/FileUploadFailureResponse"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "Could not upload file(s)",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/FileUploadFailureResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "Endpoint responsible for handling file uploads requests from client.\nIt will return a message or a reason indicating why it has failed.\nDon't forget to add the authorization header to the request with adequate base64 encoded credentials\nFor example, if service's credentials are username: 'user' and password: '123456', then you should send the following: Authorization: Basic dXNlcjoxMjM0NTY=\nYou can use https://www.base64encode.org/ to quickly encode your credentials and https://www.base64decode.org/ to quickly decode them\nIf you don't have such credentials, you should request them from the team.",
+				"tags": [
+					"Handle file uploads requests from client"
+				],
+				"security": [
+					{
+						"basic_auth": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"multipart/form-data": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"files": {
+										"items": {
+											"type": "string",
+											"format": "binary"
+										},
+										"type": "array"
+									}
+								},
+								"required": [
+									"files"
+								]
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}
