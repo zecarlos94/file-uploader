@@ -8,7 +8,7 @@ This app aims to serve as a file uploader.
 
 - [Setup](#setup)
 - [Installation](#installation)
-- [Testing](#installation)
+- [Testing](#testing)
 - [Usage](#usage)
 - [References](#references)
 
@@ -48,7 +48,7 @@ To confirm that you have `NPM` installed you can run this command in your termin
 npm -v
 ```
 
-If you get an answer like this, it means that `NPM` is installed and you may go to the [next section](#markdown-header-then-install-project-dependencies).
+If you get an answer like this, it means that `NPM` is installed and you may go to the [next section](#installation).
 
 ```sh
 6.14.13
@@ -70,13 +70,13 @@ npm install npm@latest -g
 npm install --verbose
 ```
 
-After this step you may go to the [next section](#markdown-header-configurations).
+After this step you may go to the [next section](#configurations).
 
 ## Usage
 
 ### Configurations
 
-Please check config/default.js configs and update them accordingly before you may go to the [next section](#markdown-header-run).
+Please check config/default.js configs and update them accordingly before you may go to the [next section](#run).
 
 ### Run
 
@@ -86,7 +86,7 @@ To start this service you'll need to run the following command,
 npm run dev
 ```
 
-### Testing
+## Testing
 
 To test this service you'll need to run the following command,
 
