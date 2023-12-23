@@ -8,6 +8,7 @@ This app aims to serve as a file uploader.
 
 - [Setup](#markdown-header-setup)
 - [Installation](#markdown-header-installation)
+- [Testing](#markdown-header-installation)
 - [Usage](#markdown-header-usage)
 - [References](#markdown-header-references)
 
@@ -83,6 +84,27 @@ To start this service you'll need to run the following command,
 
 ```sh
 npm run dev
+```
+
+### Testing
+
+To test this service you'll need to run the following command,
+
+```sh
+npm run tests
+```
+
+If you also want to get the coverage, run the following command,
+
+```sh
+npm run tests:coverage
+```
+
+After executing all tests, you can delete cache by running the following command,
+
+
+```sh
+npm run tests:clear
 ```
 
 You can check the available requests using the swagger dedicaded endpoint `/docs`.
