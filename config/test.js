@@ -11,8 +11,8 @@ module.exports = {
   },
   files: {
     upload: {
-      allowedMimeTypes: 'csv,xlsx,xls',
-      destination: 'file-uploads',
+      allowedMimeTypes: 'csv',
+      destination: 'file-uploads-tests',
       maxFileSize: '300MB',
       maxFilesPerRequest: 2,
       useOnlyMulter: false

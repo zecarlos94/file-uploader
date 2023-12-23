@@ -10,11 +10,15 @@ const retryWithBreaker = wrap(retryPolicy, circuitBreakerPolicy);
 
 export class FileImplementationService implements FileService {
   @usePolicy(retryWithBreaker)
-  async upload(buffer: Buffer, destination: string, filename: string, requestId: string): Promise<void> {
+  async upload(buffer: Buffer, destination: string, filename: string, requestId: string): Promise<string> {
     fs.mkdirSync(config.files.upload.destination, { recursive: true });
 
-    const writeStream: WriteStream = fs.createWriteStream(`${destination}/${Date.now()}_${requestId}_${filename}`, { flags: 'wx' });
+    const filePath = `${destination}/${Date.now()}_${requestId}_${filename}`;
+
+    const writeStream: WriteStream = fs.createWriteStream(filePath, { flags: 'wx' });
     await this.persist(buffer, writeStream);
+
+    return filePath;
   }
 
   private async persist(buffer: Buffer, writeStream: WriteStream,): Promise<void> {
