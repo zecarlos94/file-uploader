@@ -1,5 +1,6 @@
 import { circuitBreakerPolicy } from 'src/middlewares/common/circuit-breaker';
 import { FileService } from 'src/services/interfaces/file/file.service';
+import { isEmpty, isNil } from 'lodash';
 import { retryPolicy } from 'src/middlewares/common/retry';
 import { usePolicy, wrap } from 'cockatiel';
 import config from 'src/config';
@@ -10,7 +11,19 @@ const retryWithBreaker = wrap(retryPolicy, circuitBreakerPolicy);
 
 export class FileImplementationService implements FileService {
   @usePolicy(retryWithBreaker)
-  async upload(buffer: Buffer, destination: string, filename: string, requestId: string): Promise<string> {
+  async upload(buffer: Buffer, destination: string, filename: string, requestId: string): Promise<string | undefined> {
+    if (
+      !buffer || 
+      isNil(destination) || 
+      isEmpty(destination) ||
+      isNil(filename) || 
+      isEmpty(filename) ||
+      isNil(requestId) || 
+      isEmpty(requestId)
+    ) {
+      return;
+    }
+    
     fs.mkdirSync(config.files.upload.destination, { recursive: true });
 
     const filePath = `${destination}/${Date.now()}_${requestId}_${filename}`;

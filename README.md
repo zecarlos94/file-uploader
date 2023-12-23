@@ -6,11 +6,11 @@ This app aims to serve as a file uploader.
 
 ## Table of Contents
 
-- [Setup](#markdown-header-setup)
-- [Installation](#markdown-header-installation)
-- [Testing](#markdown-header-installation)
-- [Usage](#markdown-header-usage)
-- [References](#markdown-header-references)
+- [Setup](#setup)
+- [Installation](#installation)
+- [Testing](#installation)
+- [Usage](#usage)
+- [References](#references)
 
 ## Setup
 
@@ -114,4 +114,3 @@ You can check the available requests using the swagger dedicaded endpoint `/docs
 - [Badgen](https://badgen.net/) -> Fast badge generating service
 - [Devicon](https://devicon.dev/) -> Set of icons representing programming languages, designing & development tools.
 - [Datablist](https://www.datablist.com/learn/csv/download-sample-csv-files) -> Provides a list of dummy csv files
-

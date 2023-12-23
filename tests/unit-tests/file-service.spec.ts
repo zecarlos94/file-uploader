@@ -8,10 +8,12 @@ import rmfr from 'rmfr';
 describe('file service', () => {
   let fileService: FileImplementationService;
 
-  afterEach(async () => {
-    jest.restoreAllMocks();
-
+  afterAll(async () => {
     await rmfr(config.files.upload.destination)
+  });
+
+  afterEach(() => {
+    jest.restoreAllMocks();
   });
 
   beforeAll(() => {
@@ -43,6 +45,20 @@ describe('file service', () => {
   );
 
   it(
+    'upload should not persist in destination folder any file due to empty arguments', 
+    async () => {
+      // arrange
+      const buffer: Buffer = Buffer.from('mock buffer content'); 
+
+      // act
+      const filePath = await fileService.upload(buffer, '', '', '');
+      
+      // assert
+      expect(filePath).not.toBeDefined();
+    }
+  );
+
+  it(
     'upload should be persist in destination folder file "mock.csv" with "mock buffer content"', 
     async () => {
       // arrange
@@ -55,7 +71,8 @@ describe('file service', () => {
       const filePath = await fileService.upload(buffer, destination, filename, requestId);
 
       let files: string[] = await fs.readdir(destination);
-      let hasFile = files.some((file: string) => file.match(/mock.csv/));
+      const fileRegex = new RegExp(`_${requestId}_${filename}`);
+      let hasFile = files.some((file: string) => fileRegex.test(file));
 
       // assert
       expect(filePath).toBeDefined();
