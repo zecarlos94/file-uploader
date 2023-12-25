@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="11" failures="0" errors="0" time="2.963">
-  <testsuite name="file service" errors="0" failures="0" skipped="0" timestamp="2023-12-25T16:50:20" time="2.537" tests="3">
-    <testcase classname="file service upload should be return file path that contains provided requestId and filename inside provided destination folder name" name="file service upload should be return file path that contains provided requestId and filename inside provided destination folder name" time="0.004">
+<testsuites name="jest tests" tests="11" failures="0" errors="0" time="3.067">
+  <testsuite name="file service" errors="0" failures="0" skipped="0" timestamp="2023-12-25T17:45:00" time="2.575" tests="3">
+    <testcase classname="file service upload should be return file path that contains provided requestId and filename inside provided destination folder name" name="file service upload should be return file path that contains provided requestId and filename inside provided destination folder name" time="0.003">
     </testcase>
-    <testcase classname="file service upload should not persist in destination folder any file due to empty arguments" name="file service upload should not persist in destination folder any file due to empty arguments" time="0.001">
+    <testcase classname="file service upload should not persist in destination folder any file due to empty arguments" name="file service upload should not persist in destination folder any file due to empty arguments" time="0">
     </testcase>
-    <testcase classname="file service upload should be persist in destination folder file &quot;mock.csv&quot; with &quot;mock buffer content&quot;" name="file service upload should be persist in destination folder file &quot;mock.csv&quot; with &quot;mock buffer content&quot;" time="1.004">
+    <testcase classname="file service upload should be persist in destination folder file &quot;mock.csv&quot; with &quot;mock buffer content&quot;" name="file service upload should be persist in destination folder file &quot;mock.csv&quot; with &quot;mock buffer content&quot;" time="1.005">
     </testcase>
   </testsuite>
-  <testsuite name="POST /file-upload" errors="0" failures="0" skipped="0" timestamp="2023-12-25T16:50:20" time="2.776" tests="8">
-    <testcase classname="POST /file-upload responds with 401 Unauthorized due to missing required Authorization Header" name="POST /file-upload responds with 401 Unauthorized due to missing required Authorization Header" time="0.029">
+  <testsuite name="POST /file-upload" errors="0" failures="0" skipped="0" timestamp="2023-12-25T17:45:00" time="2.87" tests="8">
+    <testcase classname="POST /file-upload responds with 401 Unauthorized due to missing required Authorization Header" name="POST /file-upload responds with 401 Unauthorized due to missing required Authorization Header" time="0.028">
     </testcase>
-    <testcase classname="POST /file-upload responds with 401 Unauthorized due invalid credentials decoded from provided Authorization Header" name="POST /file-upload responds with 401 Unauthorized due invalid credentials decoded from provided Authorization Header" time="0.011">
+    <testcase classname="POST /file-upload responds with 401 Unauthorized due invalid credentials decoded from provided Authorization Header" name="POST /file-upload responds with 401 Unauthorized due invalid credentials decoded from provided Authorization Header" time="0.013">
     </testcase>
-    <testcase classname="POST /file-upload responds with 401 Unauthorized due malformed Authorization Header" name="POST /file-upload responds with 401 Unauthorized due malformed Authorization Header" time="0.002">
+    <testcase classname="POST /file-upload responds with 401 Unauthorized due malformed Authorization Header" name="POST /file-upload responds with 401 Unauthorized due malformed Authorization Header" time="0.005">
     </testcase>
-    <testcase classname="POST /file-upload responds with 400 Bad Request due to missing files to upload" name="POST /file-upload responds with 400 Bad Request due to missing files to upload" time="0.003">
+    <testcase classname="POST /file-upload responds with 400 Bad Request due to missing files to upload" name="POST /file-upload responds with 400 Bad Request due to missing files to upload" time="0.005">
     </testcase>
-    <testcase classname="POST /file-upload responds with 400 &quot;Exceeded the allowed file size. Try again with a smaller file&quot;" name="POST /file-upload responds with 400 &quot;Exceeded the allowed file size. Try again with a smaller file&quot;" time="0.448">
+    <testcase classname="POST /file-upload responds with 400 &quot;Exceeded the allowed file size. Try again with a smaller file&quot;" name="POST /file-upload responds with 400 &quot;Exceeded the allowed file size. Try again with a smaller file&quot;" time="0.493">
     </testcase>
     <testcase classname="POST /file-upload responds with 400 &quot;Invalid file&quot;" name="POST /file-upload responds with 400 &quot;Invalid file&quot;" time="0.011">
     </testcase>
-    <testcase classname="POST /file-upload responds with 400 &quot;Exceeded the allowed number of file(s) that can be uploaded in a single request&quot;" name="POST /file-upload responds with 400 &quot;Exceeded the allowed number of file(s) that can be uploaded in a single request&quot;" time="0.01">
+    <testcase classname="POST /file-upload responds with 400 &quot;Exceeded the allowed number of file(s) that can be uploaded in a single request&quot;" name="POST /file-upload responds with 400 &quot;Exceeded the allowed number of file(s) that can be uploaded in a single request&quot;" time="0.003">
     </testcase>
-    <testcase classname="POST /file-upload responds with 200 &quot;Upload was successful&quot;" name="POST /file-upload responds with 200 &quot;Upload was successful&quot;" time="0.198">
+    <testcase classname="POST /file-upload responds with 200 &quot;Upload was successful&quot;" name="POST /file-upload responds with 200 &quot;Upload was successful&quot;" time="0.195">
     </testcase>
   </testsuite>
 </testsuites>

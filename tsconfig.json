@@ -6,9 +6,13 @@
     "experimentalDecorators": true,
     "module": "CommonJS",
     "outDir": "./dist",
-    "rootDir": "./src",
     "strict": true,
     "target": "ES2022",
+    "types": [
+      "express",
+      "jest",
+      "node"
+    ],
     "typeRoots": ["./src/types", "./node_modules/@types"],
     "paths": {
       "src/*": ["src/*"],
@@ -21,6 +25,9 @@
       }
     ]
   },
+  "exclude": [
+    "tests/*"
+  ],
   "ts-node": {
     "files": true
   }

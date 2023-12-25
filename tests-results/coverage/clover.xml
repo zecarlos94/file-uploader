@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1703522375256" clover="3.2.0">
-  <project timestamp="1703522375256" name="All files">
+<coverage generated="1703526303292" clover="3.2.0">
+  <project timestamp="1703526303292" name="All files">
     <metrics statements="271" coveredstatements="243" conditionals="96" coveredconditionals="69" methods="34" coveredmethods="29" elements="401" coveredelements="341" complexity="0" loc="271" ncloc="271" packages="11" files="22" classes="22"/>
     <package name="config">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="custom-environment-variables.js" path="/Users/josecarlosbrandao/Projects/personal/file-upload/config/custom-environment-variables.js">
+      <file name="custom-environment-variables.js" path="/Users/josecarlosbrandao/Projects/personal/github/file-uploader/config/custom-environment-variables.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
       </file>
-      <file name="default.js" path="/Users/josecarlosbrandao/Projects/personal/file-upload/config/default.js">
+      <file name="default.js" path="/Users/josecarlosbrandao/Projects/personal/github/file-uploader/config/default.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
       </file>
-      <file name="test.js" path="/Users/josecarlosbrandao/Projects/personal/file-upload/config/test.js">
+      <file name="test.js" path="/Users/josecarlosbrandao/Projects/personal/github/file-uploader/config/test.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src">
       <metrics statements="41" coveredstatements="35" conditionals="13" coveredconditionals="11" methods="2" coveredmethods="0"/>
-      <file name="app.ts" path="/Users/josecarlosbrandao/Projects/personal/file-upload/src/app.ts">
+      <file name="app.ts" path="/Users/josecarlosbrandao/Projects/personal/github/file-uploader/src/app.ts">
         <metrics statements="39" coveredstatements="33" conditionals="3" coveredconditionals="2" methods="2" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -61,7 +61,7 @@
         <line num="83" count="0" type="stmt"/>
         <line num="87" count="1" type="stmt"/>
       </file>
-      <file name="config.ts" path="/Users/josecarlosbrandao/Projects/personal/file-upload/src/config.ts">
+      <file name="config.ts" path="/Users/josecarlosbrandao/Projects/personal/github/file-uploader/src/config.ts">
         <metrics statements="2" coveredstatements="2" conditionals="10" coveredconditionals="9" methods="0" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
@@ -69,7 +69,7 @@
     </package>
     <package name="src.di">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="register.ts" path="/Users/josecarlosbrandao/Projects/personal/file-upload/src/di/register.ts">
+      <file name="register.ts" path="/Users/josecarlosbrandao/Projects/personal/github/file-uploader/src/di/register.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -79,7 +79,7 @@
     </package>
     <package name="src.logger">
       <metrics statements="22" coveredstatements="20" conditionals="11" coveredconditionals="5" methods="3" coveredmethods="3"/>
-      <file name="logger.ts" path="/Users/josecarlosbrandao/Projects/personal/file-upload/src/logger/logger.ts">
+      <file name="logger.ts" path="/Users/josecarlosbrandao/Projects/personal/github/file-uploader/src/logger/logger.ts">
         <metrics statements="22" coveredstatements="20" conditionals="11" coveredconditionals="5" methods="3" coveredmethods="3"/>
         <line num="6" count="2" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
@@ -107,7 +107,7 @@
     </package>
     <package name="src.middlewares.common">
       <metrics statements="97" coveredstatements="89" conditionals="43" coveredconditionals="28" methods="11" coveredmethods="9"/>
-      <file name="basic-auth-authenticator.ts" path="/Users/josecarlosbrandao/Projects/personal/file-upload/src/middlewares/common/basic-auth-authenticator.ts">
+      <file name="basic-auth-authenticator.ts" path="/Users/josecarlosbrandao/Projects/personal/github/file-uploader/src/middlewares/common/basic-auth-authenticator.ts">
         <metrics statements="20" coveredstatements="20" conditionals="12" coveredconditionals="12" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -130,13 +130,13 @@
         <line num="52" count="1" type="stmt"/>
         <line num="56" count="2" type="stmt"/>
       </file>
-      <file name="circuit-breaker.ts" path="/Users/josecarlosbrandao/Projects/personal/file-upload/src/middlewares/common/circuit-breaker.ts">
+      <file name="circuit-breaker.ts" path="/Users/josecarlosbrandao/Projects/personal/github/file-uploader/src/middlewares/common/circuit-breaker.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
       </file>
-      <file name="file-upload.ts" path="/Users/josecarlosbrandao/Projects/personal/file-upload/src/middlewares/common/file-upload.ts">
+      <file name="file-upload.ts" path="/Users/josecarlosbrandao/Projects/personal/github/file-uploader/src/middlewares/common/file-upload.ts">
         <metrics statements="29" coveredstatements="25" conditionals="8" coveredconditionals="6" methods="5" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -168,7 +168,7 @@
         <line num="69" count="1" type="stmt"/>
         <line num="75" count="5" type="stmt"/>
       </file>
-      <file name="logger.ts" path="/Users/josecarlosbrandao/Projects/personal/file-upload/src/middlewares/common/logger.ts">
+      <file name="logger.ts" path="/Users/josecarlosbrandao/Projects/personal/github/file-uploader/src/middlewares/common/logger.ts">
         <metrics statements="35" coveredstatements="31" conditionals="23" coveredconditionals="10" methods="4" coveredmethods="4"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -206,20 +206,20 @@
         <line num="116" count="0" type="stmt"/>
         <line num="121" count="8" type="stmt"/>
       </file>
-      <file name="request-id.ts" path="/Users/josecarlosbrandao/Projects/personal/file-upload/src/middlewares/common/request-id.ts">
+      <file name="request-id.ts" path="/Users/josecarlosbrandao/Projects/personal/github/file-uploader/src/middlewares/common/request-id.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="9" count="8" type="stmt"/>
         <line num="11" count="8" type="stmt"/>
       </file>
-      <file name="retry.ts" path="/Users/josecarlosbrandao/Projects/personal/file-upload/src/middlewares/common/retry.ts">
+      <file name="retry.ts" path="/Users/josecarlosbrandao/Projects/personal/github/file-uploader/src/middlewares/common/retry.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
       </file>
-      <file name="telemetry.ts" path="/Users/josecarlosbrandao/Projects/personal/file-upload/src/middlewares/common/telemetry.ts">
+      <file name="telemetry.ts" path="/Users/josecarlosbrandao/Projects/personal/github/file-uploader/src/middlewares/common/telemetry.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -228,7 +228,7 @@
     </package>
     <package name="src.models.common">
       <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-      <file name="basic-auth-failure-response.model.ts" path="/Users/josecarlosbrandao/Projects/personal/file-upload/src/models/common/basic-auth-failure-response.model.ts">
+      <file name="basic-auth-failure-response.model.ts" path="/Users/josecarlosbrandao/Projects/personal/github/file-uploader/src/models/common/basic-auth-failure-response.model.ts">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="1" type="stmt"/>
@@ -238,7 +238,7 @@
     </package>
     <package name="src.models.file">
       <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
-      <file name="file-upload-failure-response.model.ts" path="/Users/josecarlosbrandao/Projects/personal/file-upload/src/models/file/file-upload-failure-response.model.ts">
+      <file name="file-upload-failure-response.model.ts" path="/Users/josecarlosbrandao/Projects/personal/github/file-uploader/src/models/file/file-upload-failure-response.model.ts">
         <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="5" count="1" type="cond" truecount="2" falsecount="0"/>
         <line num="6" count="1" type="stmt"/>
@@ -249,7 +249,7 @@
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
       </file>
-      <file name="file-upload-success-response.model.ts" path="/Users/josecarlosbrandao/Projects/personal/file-upload/src/models/file/file-upload-success-response.model.ts">
+      <file name="file-upload-success-response.model.ts" path="/Users/josecarlosbrandao/Projects/personal/github/file-uploader/src/models/file/file-upload-success-response.model.ts">
         <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="cond" truecount="2" falsecount="0"/>
         <line num="4" count="1" type="stmt"/>
@@ -257,7 +257,7 @@
     </package>
     <package name="src.router">
       <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-      <file name="index.ts" path="/Users/josecarlosbrandao/Projects/personal/file-upload/src/router/index.ts">
+      <file name="index.ts" path="/Users/josecarlosbrandao/Projects/personal/github/file-uploader/src/router/index.ts">
         <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -279,7 +279,7 @@
     </package>
     <package name="src.router.controllers.file">
       <metrics statements="24" coveredstatements="19" conditionals="5" coveredconditionals="3" methods="4" coveredmethods="4"/>
-      <file name="file.controller.ts" path="/Users/josecarlosbrandao/Projects/personal/file-upload/src/router/controllers/file/file.controller.ts">
+      <file name="file.controller.ts" path="/Users/josecarlosbrandao/Projects/personal/github/file-uploader/src/router/controllers/file/file.controller.ts">
         <metrics statements="24" coveredstatements="19" conditionals="5" coveredconditionals="3" methods="4" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -309,7 +309,7 @@
     </package>
     <package name="src.services.implementation.file">
       <metrics statements="39" coveredstatements="34" conditionals="14" coveredconditionals="13" methods="4" coveredmethods="4"/>
-      <file name="file.service.ts" path="/Users/josecarlosbrandao/Projects/personal/file-upload/src/services/implementation/file/file.service.ts">
+      <file name="file.service.ts" path="/Users/josecarlosbrandao/Projects/personal/github/file-uploader/src/services/implementation/file/file.service.ts">
         <metrics statements="39" coveredstatements="34" conditionals="14" coveredconditionals="13" methods="4" coveredmethods="4"/>
         <line num="1" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
@@ -354,14 +354,14 @@
     </package>
     <package name="src.utils.common">
       <metrics statements="11" coveredstatements="9" conditionals="4" coveredconditionals="3" methods="3" coveredmethods="2"/>
-      <file name="cors.ts" path="/Users/josecarlosbrandao/Projects/personal/file-upload/src/utils/common/cors.ts">
+      <file name="cors.ts" path="/Users/josecarlosbrandao/Projects/personal/github/file-uploader/src/utils/common/cors.ts">
         <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
         <line num="6" count="2" type="cond" truecount="3" falsecount="1"/>
       </file>
-      <file name="dynamic-rate-limiter.ts" path="/Users/josecarlosbrandao/Projects/personal/file-upload/src/utils/common/dynamic-rate-limiter.ts">
+      <file name="dynamic-rate-limiter.ts" path="/Users/josecarlosbrandao/Projects/personal/github/file-uploader/src/utils/common/dynamic-rate-limiter.ts">
         <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>

@@ -1,5 +1,9 @@
+# File uploads
+file-uploads/*
+file-uploads-tests/*
+
 # Tests results
-tests-results
+tests-results/*
 
 # Logs
 logs
