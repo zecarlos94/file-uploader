@@ -1,6 +1,7 @@
+import { BasicAuthFailureResponseReasonEnum } from 'src/models/common/basic-auth-failure-response.model';
+import { isEmpty, isNil } from 'lodash';
 import { NextFunction, Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
-import { isEmpty, isNil } from 'lodash';
 import config from 'src/config';
 
 export const basicAuthAuthenticatorMiddleware = (
@@ -26,7 +27,7 @@ export const basicAuthAuthenticatorMiddleware = (
           res
             .status(StatusCodes.UNAUTHORIZED)
             .json({
-              reason: 'Authorization header contains invalid credentials',
+              reason: BasicAuthFailureResponseReasonEnum.InvalidCredentials,
             });
 
           return;
@@ -35,7 +36,7 @@ export const basicAuthAuthenticatorMiddleware = (
         res
           .status(StatusCodes.UNAUTHORIZED)
           .json({
-            reason: 'Authorization header is malformed',
+            reason: BasicAuthFailureResponseReasonEnum.Malformed,
           });
 
         return;
@@ -45,7 +46,7 @@ export const basicAuthAuthenticatorMiddleware = (
       res
         .status(StatusCodes.UNAUTHORIZED)
         .json({
-          reason: 'Authorization header is missing',
+          reason: BasicAuthFailureResponseReasonEnum.Missing,
         });
 
       return;

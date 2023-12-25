@@ -1,14 +1,15 @@
+import { FileUploadFailureResponseReasonEnum } from 'src/models/file/file-upload-failure-response.model';
 import { NextFunction, Request, Response } from 'express';
+import { StatusCodes } from 'http-status-codes';
 import bytes from "bytes";
 import config from "src/config";
 import fs from 'fs';
-import multer, { diskStorage, FileFilterCallback, Multer, MulterError, StorageEngine } from 'multer';
-import { StatusCodes } from 'http-status-codes';
-import { FileUploadFailureResponseReasonEnum } from 'src/models/file/file-upload-failure-response.model';
+import logger from 'src/logger/logger';
+import multer, { diskStorage, FileFilterCallback, Multer, StorageEngine } from 'multer';
 
 const multerFilter = (
-    request: Request, 
-    file: Express.Multer.File, 
+    request: Request,
+    file: Express.Multer.File,
     callback: FileFilterCallback
 ): void => {
     const allowedMimeTypes: string[] = config.files.upload.allowedMimeTypes.split(",");
@@ -52,22 +53,25 @@ export const multipleFilesUploadsMiddleware = (
     next: NextFunction
 ) => {
     multipleFilesUploads(req, res, (err) => {
-        if (err instanceof MulterError) {
+        if (err?.code) {
+            logger.error(`Multer error: ${err.code} ${err.message}`);
+
             switch (err.code) {
-                case 'LIMIT_FIELD_COUNT':
                 case 'LIMIT_FILE_COUNT':
                     return res
-                        .status(StatusCodes.REQUEST_TOO_LONG)
+                        .status(StatusCodes.BAD_REQUEST)
                         .send({ reason: FileUploadFailureResponseReasonEnum.ExceededTheAllowedNumberOfFilesThatCanBeUploadedInASingleRequest });
                 case 'LIMIT_FILE_SIZE':
-                case 'LIMIT_UNEXPECTED_FILE':
+                    return res
+                        .status(StatusCodes.BAD_REQUEST)
+                        .send({ reason: FileUploadFailureResponseReasonEnum.ExceededTheAllowedFileSize });
                 default:
                     return res
-                        .status(StatusCodes.INTERNAL_SERVER_ERROR)
-                        .send({ reason: FileUploadFailureResponseReasonEnum.CouldNotUploadFiles });
+                        .status(StatusCodes.BAD_REQUEST)
+                        .send({ reason: FileUploadFailureResponseReasonEnum.InvalidFile });
             }
         }
 
         next();
-   });
+    });
 };

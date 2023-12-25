@@ -1,6 +1,10 @@
+import { StatusCodes } from "http-status-codes";
+
+export enum FileUploadSuccessResponseReasonEnum {
+    Success = "Upload was successful"
+}
+
 export interface FileUploadSuccessResponse {
-    /**
-     * @example "Upload was successful"
-     */
-    message: string;
+    message: FileUploadSuccessResponseReasonEnum;
+    status: StatusCodes;
 }

@@ -6,6 +6,10 @@ module.exports = {
       username: 'user'
     }
   },
+  circuitBreaker: {
+    halfOpenAfterMs: 10 * 1000,
+    maxExecutionsAttemptsBeforePause: 5,
+  },
   cors: {
     corsDomainList: '*'
   },
@@ -13,8 +17,8 @@ module.exports = {
     upload: {
       allowedMimeTypes: 'csv',
       destination: 'file-uploads-tests',
-      maxFileSize: '300MB',
-      maxFilesPerRequest: 2,
+      maxFileSize: '250MB',
+      maxFilesPerRequest: 1,
       useOnlyMulter: false
     }
   },
@@ -26,6 +30,14 @@ module.exports = {
     maxFiles: '30d',
     maxSize: '20m',
     zippedArchive: 'false'
+  },
+  rateLimiter: {
+    limit: 10,
+    refreshMs: 60 * 1000,
+    windowMs: 10 * 1000
+  },
+  retries: {
+    maxAttempts: 5
   },
   server: {
     clustering: false,

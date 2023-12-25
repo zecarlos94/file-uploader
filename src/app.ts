@@ -70,7 +70,7 @@ app.use((_, res) => {
 
 setupDI();
 
-if (isMainThread) {
+if (isMainThread && process.env.NODE_ENV !== 'test') {
   const healthInspectorWorker = new Worker(
     path.resolve(__dirname, './workers/health/health-inspector.ts'), 
     { workerData: { periodicity: config.rateLimiter.refreshMs } }
