@@ -1,0 +1,21 @@
+{
+  "controllerPathGlobs": [
+    "src/router/controllers/**/*.controller.ts"
+  ],
+  "entryFile": "src/index.ts",
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "routes": {
+    "routesDir": "dist"
+  },
+  "spec": {
+    "outputDirectory": "public/swagger-spec",
+    "securityDefinitions": {
+      "basic_auth": {
+        "in": "headers",
+        "scheme": "basic",
+        "type": "http"
+      }
+    },
+    "specVersion": 3
+  }
+}
