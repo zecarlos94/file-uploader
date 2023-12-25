@@ -144,7 +144,7 @@
 		}
 	},
 	"info": {
-		"title": "file-upload-rest-service",
+		"title": "file-uploader-rest-service",
 		"version": "1.0.0",
 		"description": "The backend REST service that handles requests to upload files to filesystem",
 		"contact": {}

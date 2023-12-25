@@ -1,5 +1,5 @@
 {
-  "name": "file-upload-rest-service",
+  "name": "file-uploader-rest-service",
   "description": "The backend REST service that handles requests to upload files to filesystem",
   "version": "1.0.0",
   "homepage": "",

@@ -43,7 +43,7 @@ module.exports = {
     clustering: false,
     port: 3001
   },
-  serviceName: 'file-upload',
+  serviceName: 'file-uploader',
   telemetry: {
     enabled: false,
     metricsPath: '/metrics'
