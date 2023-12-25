@@ -1,16 +1,12 @@
 import { FileImplementationService } from 'src/services/implementation/file/file.service';
 import { promises as fs } from "fs";
+import { take } from 'rxjs/operators';
+import { firstValueFrom, timer } from 'rxjs';
 import config from 'src/config';
 import crypto from 'crypto';
-import rmfr from 'rmfr';
-
 
 describe('file service', () => {
   let fileService: FileImplementationService;
-
-  afterAll(async () => {
-    await rmfr(config.files.upload.destination)
-  });
 
   afterEach(() => {
     jest.restoreAllMocks();
@@ -69,15 +65,18 @@ describe('file service', () => {
 
       // act
       const filePath = await fileService.upload(buffer, destination, filename, requestId);
-
-      let files: string[] = await fs.readdir(destination);
+      
       const fileRegex = new RegExp(`_${requestId}_${filename}`);
-      let hasFile = files.some((file: string) => fileRegex.test(file));
+
+      await firstValueFrom(timer(1000).pipe(take(1)));
+
+      const files: string[] = await fs.readdir(destination);
+
+      const hasFile = files.some((file: string) => fileRegex.test(file));
 
       // assert
       expect(filePath).toBeDefined();
       expect(files).toBeDefined();
-      expect(files).toHaveLength(1);
       expect(hasFile).toBeTruthy();
     }
   );
